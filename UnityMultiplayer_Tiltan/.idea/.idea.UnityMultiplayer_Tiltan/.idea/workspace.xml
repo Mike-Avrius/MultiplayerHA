@@ -7,6 +7,9 @@
     <list default="true" id="90af0423-6b36-456c-bc86-357103006248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityMultiplayer_Tiltan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityMultiplayer_Tiltan/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HA_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HA_1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,9 @@
     &quot;accountId&quot;: &quot;ce445d50-9cff-436c-97e7-926611c2e4eb&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -103,7 +109,7 @@
       <updated>1776685639750</updated>
       <workItem from="1776685639753" duration="35000" />
       <workItem from="1778768852320" duration="2029000" />
-      <workItem from="1778781101994" duration="1487000" />
+      <workItem from="1778781101994" duration="6681000" />
     </task>
     <servers />
   </component>
