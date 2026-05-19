@@ -2,25 +2,41 @@ using Fusion;
 using TMPro;
 using UnityEngine;
 
+
 public class SessionManager : MonoBehaviour
 {
     [SerializeField] private NetworkRunner networkRunner;
     [SerializeField] private TMP_InputField roomNameInput;
+    [SerializeField] private TextMeshProUGUI sessionNameField;
+
+    [SerializeField] private UI_ButtonManager _uiButtonManager;
+
+   
+    
+    private int maxPlayerCount = 2;
+    public int MaxPlCount => maxPlayerCount;
     
     public void StartSession()
     {
         if (roomNameInput.text == "") return;
+
+        _uiButtonManager.ButtonInteractionChanger(UiState.InLobby);
         
         networkRunner.StartGame( new StartGameArgs()
         {
             GameMode  = GameMode.Shared,
             SessionName = roomNameInput.text,
             OnGameStarted = OnGameStarted,
-            CustomLobbyName = networkRunner.LobbyInfo.Name
+            CustomLobbyName = networkRunner.LobbyInfo.Name,
+            PlayerCount = maxPlayerCount
         });
     }
 
-
+    public void SetMaxRoomPLayer(float value)
+    {
+        maxPlayerCount = (int)value;
+    }
+    
     public void StartElseSession(string sessionName)
     {
         networkRunner.StartGame(new StartGameArgs()
@@ -40,7 +56,8 @@ public class SessionManager : MonoBehaviour
 
     private void OnGameStarted(NetworkRunner networkRunner)
     {
-        Debug.Log($"You joined room {networkRunner.SessionInfo.Name}");
+        string sn = networkRunner.SessionInfo.Name;
+        sessionNameField.text = sn;
     }
     
 }

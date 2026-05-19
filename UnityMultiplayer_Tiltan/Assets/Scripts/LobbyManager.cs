@@ -11,10 +11,12 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
     
     [SerializeField] NetworkRunner networkRunner;
     [SerializeField] private SessionManager _sessionManager;
+    [SerializeField] private UI_ButtonManager _uiButtonManager;
     
     [Header("Lobby")]
     [SerializeField] private GameObject lobbyPanel;
     [SerializeField] private TMP_InputField lobbyNameInput;
+    [SerializeField] private TextMeshProUGUI lobbyName;
     
     [Header("Session")]
     [SerializeField] private GameObject sessionPanel;
@@ -27,6 +29,9 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private TextMeshProUGUI numberOfPlayers;
    
     
+    private const string PRO_LOBBY_NAME = "ProLobby";
+    private const string NOOB_LOBBY_NAME = "NoobLobby";
+    
 
     private void Awake()
     {
@@ -37,6 +42,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
     {
         if (lobbyNameInput.text == "") return;
         
+        _uiButtonManager.ButtonInteractionChanger(UiState.LobbySelection);
         
         StartGameResult result = await networkRunner.JoinSessionLobby(SessionLobby.Custom, lobbyNameInput.text);
 
@@ -45,12 +51,42 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
             Debug.Log($"Player joined {lobbyNameInput.text}");
             lobbyPanel.SetActive(false);
             sessionPanel.SetActive(true);
+            lobbyName.text = networkRunner.LobbyInfo.Name;
+        }
+    }
+    public async void JoinProLobby()
+    {
+        _uiButtonManager.ButtonInteractionChanger(UiState.LobbySelection);
+        
+        StartGameResult result = await networkRunner.JoinSessionLobby(SessionLobby.Custom, PRO_LOBBY_NAME);
+
+        if (result.Ok)
+        {
+            Debug.Log($"Player joined {PRO_LOBBY_NAME}");
+            lobbyPanel.SetActive(false);
+            sessionPanel.SetActive(true);
+            lobbyName.text = networkRunner.LobbyInfo.Name;
+        }
+    }
+    public async void JoinNoobLobby()
+    {
+        _uiButtonManager.ButtonInteractionChanger(UiState.LobbySelection);
+        
+        StartGameResult result = await networkRunner.JoinSessionLobby(SessionLobby.Custom, NOOB_LOBBY_NAME);
+
+        if (result.Ok)
+        {
+            Debug.Log($"Player joined {NOOB_LOBBY_NAME}");
+            lobbyPanel.SetActive(false);
+            sessionPanel.SetActive(true);
+            lobbyName.text = networkRunner.LobbyInfo.Name;
         }
     }
     
 
     public async void LeaveLobby()
     {
+        _uiButtonManager.ButtonInteractionChanger(UiState.InRoom);
         if (networkRunner.IsRunning)
         {
             await networkRunner.Shutdown();
@@ -100,7 +136,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
             sessionPanel.SetActive(false);
             roomPanel.SetActive(true);
             string playerNum = networkRunner.SessionInfo?.PlayerCount.ToString();
-            numberOfPlayers.text = $"Available players: {playerNum}";
+            numberOfPlayers.text = $"Available players: {playerNum} / {_sessionManager.MaxPlCount}";
         }
 #endif   
     }
