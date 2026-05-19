@@ -37,6 +37,6 @@ public class UI_ButtonManager : MonoBehaviour
         startOwnSessionButton.interactable = state != UiState.InLobby;
         leaveLobbyButton.interactable = state != UiState.InLobby;
 
-        leaveRoomButton.interactable = state == UiState.InRoom;
+        leaveRoomButton.interactable = state != UiState.InRoom;
     }
 }

@@ -136,7 +136,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
             sessionPanel.SetActive(false);
             roomPanel.SetActive(true);
             string playerNum = networkRunner.SessionInfo?.PlayerCount.ToString();
-            numberOfPlayers.text = $"Available players: {playerNum} / {_sessionManager.MaxPlCount}";
+            numberOfPlayers.text = $"Available players: {playerNum} / {networkRunner.SessionInfo.MaxPlayers}";
         }
 #endif   
     }
@@ -161,71 +161,71 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
     {
-       // throw new NotImplementedException();
+        Debug.Log($"Shutdown: {shutdownReason}");
     }
 
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token)
     {
-//throw new NotImplementedException();
+
     }
 
     public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)
     {
-      //  throw new NotImplementedException();
+      
     }
 
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress)
     {
-      //  throw new NotImplementedException();
+      
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-//        throw new NotImplementedException();
+
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnConnectedToServer(NetworkRunner runner)
     {
-        //throw new NotImplementedException();
+       
     }
     
     public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnSceneLoadDone(NetworkRunner runner)
     {
-       // throw new NotImplementedException();
+       
     }
 
     public void OnSceneLoadStart(NetworkRunner runner)
     {
-       // throw new NotImplementedException();
+       
     }
 }

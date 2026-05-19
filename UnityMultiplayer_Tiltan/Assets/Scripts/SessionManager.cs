@@ -10,14 +10,13 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI sessionNameField;
 
     [SerializeField] private UI_ButtonManager _uiButtonManager;
-
-   
+    [SerializeField] private PlayerCountSlider _slider;
     
-    private int maxPlayerCount = 2;
-    public int MaxPlCount => maxPlayerCount;
     
     public void StartSession()
     {
+        int maxPlayerCount = _slider.GetNumber();
+        
         if (roomNameInput.text == "") return;
 
         _uiButtonManager.ButtonInteractionChanger(UiState.InLobby);
@@ -34,8 +33,9 @@ public class SessionManager : MonoBehaviour
 
     public void SetMaxRoomPLayer(float value)
     {
-        maxPlayerCount = (int)value;
+       
     }
+    
     
     public void StartElseSession(string sessionName)
     {
@@ -44,7 +44,8 @@ public class SessionManager : MonoBehaviour
             GameMode = GameMode.Shared,
             SessionName = sessionName,
             OnGameStarted = OnGameStarted,
-            CustomLobbyName =  networkRunner.LobbyInfo.Name
+            CustomLobbyName =  networkRunner.LobbyInfo.Name,
+            PlayerCount = networkRunner.SessionInfo.PlayerCount
         });
     }
 
