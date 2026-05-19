@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="90af0423-6b36-456c-bc86-357103006248" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.UnityMultiplayer_Tiltan/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.UnityMultiplayer_Tiltan/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/MyPrefabs/RoomButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MyPrefabs/RoomButton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HA_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HA_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" afterDir="false" />
@@ -34,6 +33,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCountSlider.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -112,7 +112,8 @@
       <workItem from="1778768852320" duration="2029000" />
       <workItem from="1778781101994" duration="7174000" />
       <workItem from="1779182498962" duration="2855000" />
-      <workItem from="1779190698453" duration="783000" />
+      <workItem from="1779190698453" duration="1478000" />
+      <workItem from="1779207499693" duration="1708000" />
     </task>
     <servers />
   </component>

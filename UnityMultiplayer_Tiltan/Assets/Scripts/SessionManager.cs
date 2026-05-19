@@ -6,7 +6,7 @@ public class SessionManager : MonoBehaviour
 {
     [SerializeField] private NetworkRunner networkRunner;
     [SerializeField] private TMP_InputField roomNameInput;
-
+    
     public void StartSession()
     {
         if (roomNameInput.text == "") return;
@@ -30,6 +30,11 @@ public class SessionManager : MonoBehaviour
             OnGameStarted = OnGameStarted,
             CustomLobbyName =  networkRunner.LobbyInfo.Name
         });
+    }
+
+    public void LeaveRoom()
+    {
+        networkRunner.Shutdown();
     }
     
 

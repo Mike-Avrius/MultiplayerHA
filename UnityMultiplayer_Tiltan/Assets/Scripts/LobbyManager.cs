@@ -20,6 +20,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField] private GameObject sessionPanel;
     [SerializeField] private Transform contentParent;
     [SerializeField] private EnterRoomButton roomButtonPrefab;
+    private List<EnterRoomButton> sessionButtonList = new List<EnterRoomButton>();
     
     [Header("Room")]
     [SerializeField] private GameObject roomPanel;
@@ -45,8 +46,8 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
             lobbyPanel.SetActive(false);
             sessionPanel.SetActive(true);
         }
-            
     }
+    
 
     public async void LeaveLobby()
     {
@@ -61,9 +62,18 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList)
     {
+        
+        foreach (var b in sessionButtonList)
+        {
+            Destroy(b.gameObject); // комната удаляется если в ней 0 игроков
+        }
+        
+        sessionButtonList.Clear();
+        
         foreach (var session in sessionList)
         {
             EnterRoomButton buttonObj = Instantiate(roomButtonPrefab, contentParent);
+            sessionButtonList.Add(buttonObj);
 
             string sessionName = session.Name;
 
@@ -110,7 +120,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
-      //  throw new NotImplementedException();
+        RefreshUI_Room();
     }
 
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason)
