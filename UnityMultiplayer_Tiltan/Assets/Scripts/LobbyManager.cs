@@ -4,11 +4,13 @@ using UnityEngine;
 using Fusion;
 using Fusion.Sockets;
 using TMPro;
+using UnityEngine.UI;
 
 public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 {
     
     [SerializeField] NetworkRunner networkRunner;
+    [SerializeField] private SessionManager _sessionManager;
     
     [Header("Lobby")]
     [SerializeField] private GameObject lobbyPanel;
@@ -17,7 +19,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
     [Header("Session")]
     [SerializeField] private GameObject sessionPanel;
     [SerializeField] private Transform contentParent;
-    [SerializeField] private GameObject roomButtonPrefab;
+    [SerializeField] private EnterRoomButton roomButtonPrefab;
     
     [Header("Room")]
     [SerializeField] private GameObject roomPanel;
@@ -61,9 +63,12 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
     {
         foreach (var session in sessionList)
         {
-            GameObject buttonObj = Instantiate(roomButtonPrefab, contentParent);
+            EnterRoomButton buttonObj = Instantiate(roomButtonPrefab, contentParent);
 
-            buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = session.Name;
+            string sessionName = session.Name;
+
+            buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = sessionName;
+            buttonObj.GetComponent<Button>().onClick.AddListener((() => buttonObj.JoinExistenceRoom(_sessionManager, sessionName)));
         }
     }
     

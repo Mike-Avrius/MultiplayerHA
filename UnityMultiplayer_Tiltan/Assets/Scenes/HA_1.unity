@@ -3817,11 +3817,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LobbyManager
   networkRunner: {fileID: 779382018}
+  _sessionManager: {fileID: 1861223487}
   lobbyPanel: {fileID: 927995748}
   lobbyNameInput: {fileID: 889029857}
   sessionPanel: {fileID: 254255311}
   contentParent: {fileID: 2004626295}
-  roomButtonPrefab: {fileID: 5563147607844200817, guid: b040ad7ed71ec2d43b23c504cf6f8a18, type: 3}
+  roomButtonPrefab: {fileID: 8881706516519299610, guid: b040ad7ed71ec2d43b23c504cf6f8a18, type: 3}
   roomPanel: {fileID: 278590721}
   numberOfPlayers: {fileID: 2047427148}
 --- !u!1 &1861579469

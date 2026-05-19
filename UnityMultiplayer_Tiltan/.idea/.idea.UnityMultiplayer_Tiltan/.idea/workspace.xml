@@ -9,8 +9,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/MyPrefabs/RoomButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/MyPrefabs/RoomButton.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HA_1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HA_1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +112,7 @@
       <workItem from="1778768852320" duration="2029000" />
       <workItem from="1778781101994" duration="7174000" />
       <workItem from="1779182498962" duration="2855000" />
+      <workItem from="1779190698453" duration="783000" />
     </task>
     <servers />
   </component>

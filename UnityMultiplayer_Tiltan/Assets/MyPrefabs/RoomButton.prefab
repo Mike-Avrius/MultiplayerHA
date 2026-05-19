@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 7106045400083045935}
   - component: {fileID: 6596102523657671299}
   - component: {fileID: 4596946706799267228}
+  - component: {fileID: 8881706516519299610}
   m_Layer: 5
   m_Name: RoomButton
   m_TagString: Untagged
@@ -270,3 +271,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8881706516519299610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5563147607844200817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25cebb6a45f50d14cbdcea65267db30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnterRoomButton

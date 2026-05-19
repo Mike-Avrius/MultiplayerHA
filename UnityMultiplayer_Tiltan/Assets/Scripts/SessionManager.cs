@@ -20,6 +20,19 @@ public class SessionManager : MonoBehaviour
         });
     }
 
+
+    public void StartElseSession(string sessionName)
+    {
+        networkRunner.StartGame(new StartGameArgs()
+        {
+            GameMode = GameMode.Shared,
+            SessionName = sessionName,
+            OnGameStarted = OnGameStarted,
+            CustomLobbyName =  networkRunner.LobbyInfo.Name
+        });
+    }
+    
+
     private void OnGameStarted(NetworkRunner networkRunner)
     {
         Debug.Log($"You joined room {networkRunner.SessionInfo.Name}");
