@@ -10,7 +10,6 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LobbyManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCountSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCountSlider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SessionManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI_ButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI_ButtonManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +118,8 @@
       <workItem from="1779207499693" duration="1708000" />
       <workItem from="1779213167088" duration="6000" />
       <workItem from="1779213173968" duration="1255000" />
-      <workItem from="1779222820273" duration="5411000" />
+      <workItem from="1779222820273" duration="6393000" />
+      <workItem from="1779230231938" duration="34000" />
     </task>
     <servers />
   </component>

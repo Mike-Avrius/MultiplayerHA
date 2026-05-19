@@ -166,7 +166,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
     {
-       
+        Debug.LogWarning($"Disconnected: {reason}");
     }
 
     public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token)
@@ -176,7 +176,7 @@ public class LobbyManager : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnConnectFailed(NetworkRunner runner, NetAddress remoteAddress, NetConnectFailedReason reason)
     {
-       
+        Debug.LogError($"Connect failed: {reason}");
     }
 
     public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message)

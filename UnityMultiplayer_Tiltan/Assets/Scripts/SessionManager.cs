@@ -13,7 +13,7 @@ public class SessionManager : MonoBehaviour
     [SerializeField] private PlayerCountSlider _slider;
     
     
-    public void StartSession()
+    public async void StartSession()
     {
         int maxPlayerCount = _slider.GetNumber();
         
@@ -21,7 +21,7 @@ public class SessionManager : MonoBehaviour
 
         _uiButtonManager.ButtonInteractionChanger(UiState.InLobby);
         
-        networkRunner.StartGame( new StartGameArgs()
+        StartGameResult result = await networkRunner.StartGame( new StartGameArgs()
         {
             GameMode  = GameMode.Shared,
             SessionName = roomNameInput.text,
@@ -29,11 +29,15 @@ public class SessionManager : MonoBehaviour
             CustomLobbyName = networkRunner.LobbyInfo.Name,
             PlayerCount = maxPlayerCount
         });
-    }
-
-    public void SetMaxRoomPLayer(float value)
-    {
-       
+        
+        if (result.Ok)
+        {
+            Debug.Log("Room joined/created");
+        }
+        else
+        {
+            Debug.LogError($"Failed: {result.ShutdownReason}");
+        }
     }
     
     
